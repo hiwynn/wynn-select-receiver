@@ -1,27 +1,13 @@
 # WynnSelectReceivers
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.0.
+自定义元素（Web Elements） wynn-select-receiver 的源代码。
 
-## Development server
+## 测试
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+在 `app.module.ts` 文件的 `bootstrap` 加上 `TestComponent`，运行 `ng serve --open --port 4201` 可以在 `http://localhost:4201` 看到测试效果。
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+编译之前去掉 `app.module.ts` 文件中 `bootstrap` 中的 `TestComponent`。执行 `ng build` 编译项目，输出文件在 `dist/` 目录下。
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+`dist/` 文件夹下有一个 `test.html` 可以用来测试编译过后的代码。
