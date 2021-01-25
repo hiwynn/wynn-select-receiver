@@ -1,4 +1,4 @@
-# WynnSelectReceivers
+# Wynn Select Receivers
 
 自定义元素（Web Elements） wynn-select-receiver 的源代码。
 
