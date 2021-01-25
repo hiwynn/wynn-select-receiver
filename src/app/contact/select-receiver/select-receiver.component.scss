@@ -1,0 +1,160 @@
+.mat-dialog-title {
+  margin-bottom: 0;
+
+  .search-box {
+    font-size: 14px;
+    position: relative;
+    width: 40%;
+    min-width: 120px;
+    max-width: 300px;
+
+    .search-input {
+      border-bottom: 1px solid #ccc;
+    }
+
+    .clear-button {
+      cursor: pointer;
+      position: absolute;
+      font-size: 14px;
+      right: 0;
+      bottom: 0;
+    }
+  }
+}
+
+.contact-receiver {
+  min-height: 450px;
+
+  .contact-list {
+    .group {
+      .group-list {
+        min-height: 300px;
+        max-height: 400px;
+        overflow-y: scroll;
+        margin-top: -10px;
+        min-width: 330px;
+
+        mat-expansion-panel {
+          min-width: 330px;
+
+          &.selected {
+            background-color: #eee;
+          }
+
+          .mat-expansion-panel-header {
+            padding: 0 15px;
+
+            mat-panel-title {
+              font-weight: bold;
+
+              .group-name:hover {
+                text-shadow: 0 0 2px #aaa;
+                opacity: 0.8;
+              }
+            }
+
+            .add-group-button {
+              position: absolute;
+              right: 32px;
+              height: 24px;
+            }
+
+            .group-selected-icon {
+              position: absolute;
+              right: 32px;
+              height: 24px;
+              color: green;
+
+              .clear {
+                display: none;
+              }
+
+              &:hover .done {
+                display: none;
+              }
+
+              &:hover .clear {
+                color: red;
+                display: inline-block;
+              }
+            }
+          }
+        }
+      }
+
+    }
+
+    .single {
+      min-width: 300px;
+
+      .single-person-list {
+        margin-top: -10px;
+        min-height: 300px;
+        max-height: 400px;
+        overflow-y: scroll;
+      }
+    }
+
+    .create-button {
+      height: 28px;
+      line-height: 28px;
+      font-weight: normal;
+      margin-right: 15px;
+    }
+
+    ul {
+      li {
+        height: 40px;
+        padding-left: 6px;
+        padding-right: 8px;
+        border-bottom: 1px solid #ccc;
+        color: #666;
+
+        &.selected {
+          background-color: #eee;
+        }
+
+        &:first-child {
+          border-top: 1px solid #ccc;
+        }
+
+        .add-person-button {
+          cursor: pointer;
+          height: 24px;
+        }
+
+        .display-field {
+          cursor: pointer;
+
+          &:hover {
+            text-shadow: 0 0 2px #aaa;
+            opacity: 0.8;
+          }
+        }
+
+        .selected-icon {
+          cursor: pointer;
+          height: 24px;
+          color: green;
+
+          .clear {
+            display: none;
+          }
+
+          &:hover .done {
+            display: none;
+          }
+
+          &:hover .clear {
+            color: red;
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+}
+
+.mat-dialog-actions {
+  padding-top: 0;
+}

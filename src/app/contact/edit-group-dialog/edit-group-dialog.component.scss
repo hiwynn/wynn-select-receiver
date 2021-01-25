@@ -1,0 +1,147 @@
+$labelWidth: 60px;
+
+.mat-dialog-title {
+  margin-bottom: 2px;
+
+  span {
+    font-size: 18px;
+  }
+
+  .search-box {
+    font-size: 14px;
+    position: relative;
+    width: 40%;
+    min-width: 200px;
+    max-width: 300px;
+
+    .search-input {
+      border-bottom: 1px solid #ccc;
+    }
+
+    .clear-button {
+      cursor: pointer;
+      position: absolute;
+      font-size: 14px;
+      right: 0;
+      bottom: 0;
+    }
+  }
+}
+
+.label {
+  font-size: 14px;
+  min-width: $labelWidth;
+  text-align: right;
+}
+
+input {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 2px;
+  font-size: 14px;
+}
+
+.mat-dialog-content {
+
+  .group-members {
+    min-width: 300px;
+    padding-top: 10px;
+
+    .group-name {
+      padding-bottom: 6px;
+      position: relative;
+
+      input {
+        width: 218px;
+        font-size: 18px;
+        padding-bottom: 6px;
+      }
+
+      .error-message {
+        font-size: 13px;
+        margin-top: 4px;
+        font-weight: 500;
+        border: 1px solid #ebccd1;
+        color: #a94442;
+        background-color: #f2dede;
+        display: inline-block;
+        padding: 2px 6px;
+        border-radius: 4px;
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+        //visibility: hidden;
+
+        &.display {
+          visibility: visible;
+        }
+      }
+    }
+
+    ul {
+      min-width: 218px;
+
+      li {
+        background-color: #eee;
+
+        .remove-from-group {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .contact-list {
+    min-width: 240px;
+
+    .label {
+      margin: 15px 0 8px;
+      display: inline-block;
+    }
+
+    .selected-in-group {
+      margin-left: 5px;
+    }
+  }
+
+  ul {
+    font-size: 14px;
+    height: 400px;
+    overflow-y: scroll;
+
+    li {
+      height: 40px;
+      padding-left: 6px;
+      padding-right: 8px;
+      border-bottom: 1px solid #ccc;
+      color: #666;
+
+      &:first-child {
+        border-top: 1px solid #ccc;
+      }
+
+      &.exist {
+        background-color: #eee;
+      }
+
+      .selected-icon {
+        cursor: pointer;
+        height: 24px;
+        color: green;
+
+        .clear {
+          display: none;
+        }
+
+        &:hover .done {
+          display: none;
+        }
+
+        &:hover .clear {
+          color: red;
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+}

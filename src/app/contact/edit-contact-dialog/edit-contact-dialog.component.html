@@ -1,0 +1,22 @@
+<h3 mat-dialog-title>{{title}}</h3>
+<hr>
+<div mat-dialog-content>
+  <div fxLayout="row" class="name-field">
+    <mat-label class="label">{{displayLanguages.personNameField}}：</mat-label>
+    <input matInput [(ngModel)]="name">
+  </div>
+  <div fxLayout="row">
+    <mat-label class="label">{{displayLanguages.personValueField}}：</mat-label>
+    <div>
+      <input matInput type="email" [(ngModel)]="value">
+      <span class="error-message" [class.display]="checkRepeat()">{{displayLanguages.repeatTip}}</span>
+    </div>
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-stroked-button (click)="delete()" *ngIf="data.contact">{{displayLanguages.deletePerson}}</button>
+  <span fxFlex></span>
+  <button mat-stroked-button mat-dialog-close>{{displayLanguages.cancelButton}}</button>
+  <button mat-stroked-button (click)="done()"
+          [disabled]="!value || !name || checkRepeat()">{{displayLanguages.OkButton}}</button>
+</div>

@@ -1,0 +1,50 @@
+<h3 mat-dialog-title fxLayout="row" fxLayoutAlign="space-between center">
+  <span>{{displayLanguages.groupTitle}}</span>
+  <div class="search-box">
+    <input class="search-input" matInput [(ngModel)]="searchText" (keyup)="searchChange(searchText)" placeholder="搜索">
+    <mat-icon class="clear-button" aria-label="Clear" (click)="clearSearch()">close</mat-icon>
+  </div>
+</h3>
+<hr>
+<div mat-dialog-content>
+  <div fxLayout="row" fxLayoutGap="30px">
+    <div class="group-members">
+      <div fxLayout="row" class="group-name">
+        <mat-label class="label">{{displayLanguages.groupNameFiled}}：</mat-label>
+        <input matInput [(ngModel)]="currentGroup.groupName">
+        <span class="error-message" *ngIf="checkRepeat()">{{displayLanguages.repeatTip}}</span>
+      </div>
+      <div class="members" fxLayout="row">
+        <mat-label class="label">{{displayLanguages.groupMemberFiled}}：</mat-label>
+        <ul>
+          <li *ngFor="let person of currentGroup.members; trackBy: trackByFn"
+              fxLayout="row" fxLayoutAlign="space-between center">
+            <span class="display-content" matTooltip="{{person[options.valueKey]}}"
+                  [matTooltipPosition]="'after'">{{person[options.display]}}</span>
+            <mat-icon class="remove-from-group" (click)="removeFromGroup(person)">remove_circle_outline</mat-icon>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="contact-list">
+      <mat-label class="label">{{displayLanguages.selectPersons}}：</mat-label>
+      <ul>
+        <li *ngFor="let person of contacts | filterSearch : searchText : options.display : options.valueKey"
+            [ngClass]="{exist : person.exist}" fxLayout="row" fxLayoutAlign="space-between center">
+          <mat-checkbox class="selected-in-group" [(ngModel)]="person.exist" (change)="changePersonInList(person)">
+            <span class="display-content" matTooltip="{{person[options.valueKey]}}"
+                  [matTooltipPosition]="'after'">{{person[options.display]}}</span>
+          </mat-checkbox>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-stroked-button (click)="delete()" *ngIf="data.group">{{displayLanguages.deleteGroup}}</button>
+  <span fxFlex></span>
+  <button mat-stroked-button mat-dialog-close>{{displayLanguages.cancelButton}}</button>
+  <button mat-stroked-button [disabled]="!currentGroup.groupName || checkRepeat() || !currentGroup.members.length"
+          (click)="done()">{{displayLanguages.OkButton}}
+  </button>
+</div>

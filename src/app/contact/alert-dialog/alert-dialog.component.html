@@ -1,0 +1,8 @@
+<h4 mat-dialog-title>{{data.title}}</h4>
+<div mat-dialog-content>
+  <p>{{data.description}}</p>
+</div>
+<div mat-dialog-actions align="end">
+  <button mat-stroked-button mat-dialog-close>{{displayLanguages.cancelButton}}</button>
+  <button mat-stroked-button [mat-dialog-close]="true">{{displayLanguages.OkButton}}</button>
+</div>

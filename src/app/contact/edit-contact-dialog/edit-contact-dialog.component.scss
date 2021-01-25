@@ -1,0 +1,49 @@
+.mat-dialog-title {
+  margin-bottom: 0;
+  font-size: 16px;
+  height: 24px;
+  margin-top: -14px;
+}
+
+.mat-dialog-content {
+  padding-top: 18px;
+  padding-bottom: 6px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  .name-field {
+    margin-bottom: 20px;
+  }
+
+  .label {
+    font-size: 14px;
+    min-width: 80px;
+    text-align: right;
+  }
+
+  input {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 2px;
+    min-width: 260px;
+    font-size: 14px;
+  }
+
+  .error-message {
+    font-size: 13px;
+    margin-top: 4px;
+    font-weight: 500;
+    border: 1px solid #ebccd1;
+    color: #a94442;
+    background-color: #f2dede;
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 4px;
+    visibility: hidden;
+
+    &.display {
+      visibility: visible;
+    }
+  }
+
+}
+
