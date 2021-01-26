@@ -70,6 +70,35 @@ groupPrimaryKey | 联系人组的唯一标识
  }
 ```
 
+### method
+
+#### done
+
+选好所需的联系人之后点击确定触发。
+
+#### personCreated
+
+新建单个联系人触发。
+
+#### personUpdated
+
+编辑单个联系人触发。
+
+#### personDeleted
+
+删除单个联系人触发。
+
+#### groupCreated
+
+创建联系人组触发。
+
+#### groupUpdated
+
+编辑联系人组触发。
+
+#### groupDeleted
+
+删除联系人组触发。
 
 
 
