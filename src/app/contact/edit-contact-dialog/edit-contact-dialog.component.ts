@@ -52,6 +52,18 @@ export class EditContactDialogComponent implements OnInit {
     return repeat;
   }
 
+  checkValid() {
+    let reg;
+    if (this.options.type === 'email') {
+      reg = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+    } else if (this.options.type === 'phone') {
+      reg = /^1(3[0-9]|4[01456879]|5[0-3,5-9]|6[2567]|7[0-8]|8[0-9]|9[0-3,5-9])\d{8}$/;
+    } else {
+      reg = /^[1-9][0-9]\d{4,9}$/;
+    }
+    return this.value && !reg.test(this.value);
+  }
+
   done() {
     this.dialogRef.close({
       primaryKey: this.data.contact ? this.data.contact[this.options.primaryKey] : null,

@@ -39,7 +39,8 @@ export class ContactService {
       groupNameFiled: '组名称',
       groupMemberFiled: '组成员',
       selectPersons: '选择组成员',
-      repeatTip: '已存在'
+      repeatTip: '已存在',
+      invalidTip: '无效'
     };
   }
 

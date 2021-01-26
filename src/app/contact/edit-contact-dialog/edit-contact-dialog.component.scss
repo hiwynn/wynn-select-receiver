@@ -28,20 +28,27 @@
     font-size: 14px;
   }
 
-  .error-message {
-    font-size: 13px;
+  .error-message-box {
     margin-top: 4px;
-    font-weight: 500;
-    border: 1px solid #ebccd1;
-    color: #a94442;
-    background-color: #f2dede;
-    display: inline-block;
-    padding: 2px 6px;
-    border-radius: 4px;
-    visibility: hidden;
 
-    &.display {
-      visibility: visible;
+    .error-message {
+      font-size: 13px;
+      font-weight: 500;
+      border: 1px solid #ebccd1;
+      color: #a94442;
+      background-color: #f2dede;
+      padding: 2px 6px;
+      border-radius: 4px;
+      display: none;
+
+      &.display {
+        display: inline-block;
+      }
+    }
+
+    .error-message-height {
+      display: inline-block;
+      height: 24px;
     }
   }
 

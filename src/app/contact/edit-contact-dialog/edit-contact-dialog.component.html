@@ -7,9 +7,13 @@
   </div>
   <div fxLayout="row">
     <mat-label class="label">{{displayLanguages.personValueField}}：</mat-label>
-    <div>
+    <div fxLayout="column">
       <input matInput type="email" [(ngModel)]="value">
-      <span class="error-message" [class.display]="checkRepeat()">{{displayLanguages.repeatTip}}</span>
+      <div class="error-message-box" fxLayout="row" fxLayoutAlign="none center">
+        <span class="error-message" [class.display]="checkRepeat()">{{displayLanguages.repeatTip}}</span>
+        <span class="error-message" [class.display]="checkValid()">{{displayLanguages.invalidTip}}</span>
+        <span class="error-message-height"></span>
+      </div>
     </div>
   </div>
 </div>
